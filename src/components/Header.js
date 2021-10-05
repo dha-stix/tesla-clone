@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styled from "styled-components"
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import {Fade} from "react-reveal"
+
 const Header = () => {
     const [clicked, setClicked] = useState(false)
     return (
@@ -11,31 +11,31 @@ const Header = () => {
             <img src="/images/logo.svg"  alt="Tesla" />
 
             <Menu>
-                <li><a href="#">MODEL S</a></li>
-                <li><a href="#">MODEL 3</a></li>
-                <li><a href="#">MODEL X</a></li>
-                <li><a href="#">MODEL Y</a></li>
+                <li>MODEL S</li>
+                <li>MODEL 3  </li>
+                <li> MODEL X  </li>
+                <li> MODEL Y  </li>
             </Menu>
             <RightMenu>
-                <li><a href="#">SHOP</a></li>
-                <li><a href="#">TESLA ACCOUNT</a></li>
+                <li> SHOP  </li>
+                <li> TESLA ACCOUNT  </li>
             </RightMenu>
             <Hamburger onClick={()=> setClicked(true)}/>
             {clicked && (
                 <>
                 <BurgerNav>
-                    <li><a href="#">Model S</a></li>
-                    <li><a href="#">Model 3</a></li>
-                    <li><a href="#">Model X</a></li>
-                    <li><a href="#">Model Y</a></li>
-                    <li><a href="#">Existing Inventory</a></li>
-                    <li><a href="#">Used Inventory</a></li>
-                    <li><a href="#">Trade-in</a></li>
-                    <li><a href="#">Cybertruck</a></li>
-                    <li><a href="#">Roadaster</a></li>
-                    <li><a href="#">Utitlities </a></li>
-                    <li><a href="#">Test Drive</a></li>
-                    <li><a href="#">Cargo Delivery</a></li>
+                    <li> Model S  </li>
+                    <li> Model 3  </li>
+                    <li> Model X  </li>
+                    <li> Model Y  </li>
+                    <li> Existing Inventory  </li>
+                    <li> Used Inventory  </li>
+                    <li> Trade-in  </li>
+                    <li> Cybertruck  </li>
+                    <li> Roadaster  </li>
+                    <li> Utitlities   </li>
+                    <li> Test Drive  </li>
+                    <li> Cargo Delivery  </li>
                 </BurgerNav>
             <CloseBtn onClick={()=>setClicked(false)}/>
             </>
@@ -63,10 +63,7 @@ const Menu =  styled.ul`
     display: flex;
     li {
         list-style-type : none;
-        margin: 0px 10px
-    }
-    li a {
-        text-decoration: none;
+        margin: 0px 10px;
         font-weight: 600;
         font-size: 16px;
         cursor: pointer;
@@ -97,8 +94,8 @@ const BurgerNav = styled.ul`
     z-index: 10;
     padding: 40px 20px;
     width: 300px;
-    transform: translateX(0);
-    transition: transform 0.2 ease-in-out; 
+    transition: all 20s ease-in;
+    transform: translateX(0%);
  li {
         list-style-type : none;
         padding: 15px 0;
