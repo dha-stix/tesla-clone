@@ -1,14 +1,26 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from "styled-components"
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import logo from "../images/logo.svg"
 
 const Header = () => {
     const [clicked, setClicked] = useState(false)
+    const [show, setShow] = useState(false)
+
+    useEffect(()=> {
+        window.addEventListener("scroll", ()=> {
+        window.scrollY > 100 ? setShow(true) :  setShow(false)
+        })
+        return ()=> {
+            window.removeEventListener("scroll", ()=>{})
+        }
+    }, [])
+
     return (
         <div>
-            <Container>
-            <img src="/images/logo.svg"  alt="Tesla" />
+            <Container bgColor={show}>
+            <img src={logo}  alt="Tesla" />
 
             <Menu>
                 <li>MODEL S</li>
@@ -58,6 +70,7 @@ z-index: 1;
 display: flex;
 align-items: center;
 justify-content: space-between;
+background-color: ${props => props.bgColor ? "#faf9f9" : "transparent"};
 `
 const Menu =  styled.ul`
     display: flex;
